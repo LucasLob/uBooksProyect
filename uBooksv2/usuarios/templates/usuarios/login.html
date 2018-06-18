@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<title> Login de usuario </title>
+
+{% endblock %}
+
+{% block section %}
+<div class="container">
+        <div class="card card-container">
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" method = "POST">
+                {% csrf_token %}
+                Nombre de usuario: {{ login_form.usr }}
+                Contraseña: {{ login_form.pwd }}
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button type ="submit" class="btn btn-primary"> Entrar </button>
+            </form><!-- /form -->
+            <a href="{% url 'reiniciocontrasenia' %}"> No recuerdo mi contraseña :(</a>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+{% for error in errores %}
+<p> {{ error }} </p>
+{% endfor %}
+{% endblock %}

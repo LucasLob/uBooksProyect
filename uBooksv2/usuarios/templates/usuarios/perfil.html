@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> Mi perfil </title>
+{% endblock %}
+
+{% block body %}
+<div class="card text-center">
+  <div class="card-header">
+      <b>Mi perfil</b>
+  </div>
+  <div class="card-body">
+       <img id ="avatar" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" height="120">
+      <hr>
+    <ul class="list-group list-group-flush">
+Nombre: {{ user.first_name }}<br>
+
+Apellidos: {{ user.last_name }}<br>
+
+Correo electrónico: {{ user.email }}<br>
+        <hr>
+  </ul>
+    <a href="{% url 'editar' %}" class="btn btn-secondary active" role="button" aria-pressed="true">Editar perfil</a>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+{% endblock %}

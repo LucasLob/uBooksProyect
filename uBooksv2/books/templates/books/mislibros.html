@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block head %}
+
+    <title>Mis libros</title>
+
+{% endblock %}
+
+{% block section %}
+
+<div id ="container">
+    <br>
+    <h5>Mis libros añadidos </h5>
+    <div class="contenedorlibros">
+        {% for libro in mislibros %}
+            <a href="{% url 'detalle' libro.pk %}">
+                <img src="{{ libro.imagen }}" height="320">
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> Editar perfil </title>
+{% endblock %}
+
+
+{% block section %}
+<div class="card text-center">
+  <div class="card-header">
+      <b>Editar perfil</b>
+  </div>
+  <div class="card-body">
+       <img id ="avatar" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" height="120">
+      <hr>
+    <ul class="list-group list-group-flush">
+        <form method="POST">
+            {% csrf_token %}
+            Contraseña antigua: {{ formulario.old_password }}<br>
+
+            Nueva contraseña: {{ formulario.new_password1 }}<br>
+
+            Confirmar nueva contraseña: {{ formulario.new_password2 }}<br>
+        <hr>
+  </ul>
+     <button type="submit" class="btn btn-primary">Actualizar</button>
+      </form>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+{% endblock %}

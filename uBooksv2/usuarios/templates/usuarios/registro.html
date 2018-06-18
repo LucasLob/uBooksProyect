@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block section %}
+<div class ="container">
+	<h4>Registro</h4>
+	<form method="POST">
+	{% csrf_token %}
+	<div class="form-group row">
+	  <div class="col-xs-3">
+		<label for="ex2">Nombre</label>
+		{{ form.first_name }}
+	  </div>
+		  <div class="col-xs-3">
+		<label for="ex2">Apellidos</label>
+		{{ form.last_name }}
+	  </div>
+	</div>
+	<div class="form-group row">
+	  <div class="col-xs-3">
+		<label for="ex2">Correo electrónico</label>
+		{{ form.email }}
+	  </div>
+	  <div class="col-xs-3">
+		<label for="ex2">Nombre de usuario</label>
+		{{ form.username }}
+	  </div>
+		</div>
+	<div class="form-group row">
+
+		<div class="col-xs-3">
+		<label for="ex2">Contraseña</label>
+		{{ form.password1 }}
+		</div>
+
+		<div class="col-xs-3">
+		<label for="ex2">Confirmación de contraseña</label>
+		{{ form.password2 }}
+		</div>
+		<br>
+
+		<div class="col-xs-3">
+		<label for="ex2">Ciudad</label>
+		{{ form.city }}
+		</div>
+
+	</div><br>
+	<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+</div>
+{% endblock %}

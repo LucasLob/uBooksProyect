@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block section %}
-<div>
-    <h2> Los más vendidos </h2>
-    {% for libro in libros_list %}
-        <img src="{{ libro.imagen }}" alt="{{ photo.titulo }}" height="200">
-    {% endfor %}
-</div>
-{% endblock %}
